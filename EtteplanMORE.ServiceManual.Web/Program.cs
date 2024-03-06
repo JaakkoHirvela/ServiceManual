@@ -35,13 +35,9 @@ WebApplication app = builder.Build();
 using (IServiceScope scope = app.Services.CreateScope())
 {
     IServiceProvider services = scope.ServiceProvider;
-
-    // Reset the database for each run.
     ServiceManualDbContext dbContext = services.GetRequiredService<ServiceManualDbContext>();
-    dbContext.Database.EnsureDeleted();
-    dbContext.Database.EnsureCreated();
 
-    // Seed the database with some data.
+    dbContext.Database.EnsureCreated();
     string factoryDeviceSeedFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "factoryDeviceSeedData.csv");
     string maintenanceTaskSeedFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "maintenanceTaskSeedData.csv");
     SeedData.Initialize(services, factoryDeviceSeedFilePath, maintenanceTaskSeedFilePath);
