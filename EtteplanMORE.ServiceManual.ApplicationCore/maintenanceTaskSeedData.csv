@@ -1,0 +1,9 @@
+FactoryDeviceId,Severity,RegistrationTime,Description,Status
+1,critical,2019-01-01 00:00:00,Device is broken,closed
+1,critical,2022-01-01 00:00:00,Device is down,closed
+1,important,2023-01-01 00:00:00,Device needs maintenance,open
+2,important,2020-01-02 00:00:00,Device is faulty,closed
+3,unimportant,2021-01-04 00:00:00,Device is annoying,open
+4,critical,2022-01-05 00:00:00,Device is down,open
+5,important,2023-01-06 00:00:00,Device is faulty,open
+6,unimportant,2024-01-07 00:00:00,Device is too noisy,open

@@ -1,0 +1,61 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@ServiceManual_HostAddress = https://localhost:5001
+
+GET {{ServiceManual_HostAddress}}/api/FactoryDevices/
+Accept: application/json
+
+###
+
+GET {{ServiceManual_HostAddress}}/api/FactoryDevices/116
+Accept: application/json
+
+###
+
+
+GET {{ServiceManual_HostAddress}}/api/MaintenanceTasks/
+Accept: application/json
+
+###
+
+GET {{ServiceManual_HostAddress}}/api/MaintenanceTasks/1
+Accept: application/json
+
+###
+
+GET {{ServiceManual_HostAddress}}/api/MaintenanceTasks/bydevice/1
+Accept: application/json
+
+###
+
+PUT {{ServiceManual_HostAddress}}/api/MaintenanceTasks/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 1,
+    "factoryDeviceId": 2,
+    "severity": 0,
+    "registrationTime": "2023-01-01T00:00:00",
+    "description": "Device is very broken",
+    "status": "open"
+}
+
+###
+POST {{ServiceManual_HostAddress}}/api/MaintenanceTasks/
+Content-Type: application/json
+Accept: application/json
+
+{
+    "factoryDeviceId": 1,
+    "severity": 0,
+    "description": "This is test task number 4",
+    "registrationTime": "2022-01-01T00:00:00",
+    "status": "Open"
+}
+
+###
+
+DELETE {{ServiceManual_HostAddress}}/api/MaintenanceTasks/1
+Accept: application/json
+
+###
