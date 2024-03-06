@@ -1,9 +1,9 @@
-# etteplan-servicemanual
+# Service Manual
 
 This is a .NET 8.0 application that provides a RESTful API for accessing factory devices and managing their 
 maintenance tasks.
 
-### Coding Task background
+### Coding Task Background
 
 - We are building an application for our client for making records of factory device
 maintenance tasks
@@ -82,3 +82,15 @@ If you run the application in development mode, you can access the Swagger UI at
 ### Dependencies
 •	Entity Framework Core: Used for data access.
 •	Swashbuckle: Used to generate Swagger UI and OpenAPI documentation.
+
+### Possible Improvements and Possible Future Work
+
+-   Automated tests. Now only manual testing has been done.
+
+-	Authentication and authorization.
+
+-	Better validation of input data.
+
+-   More advanced filtering and sorting options for maintenance tasks.
+
+-   More advanced error handling. Now only basic cases are handled.
