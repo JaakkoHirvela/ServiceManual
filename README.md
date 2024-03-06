@@ -42,16 +42,18 @@ _Alternatively: open the solution with VS, build and run._
 ### API Endpoints
 
 #### Factory Devices
-•	GET /api/factorydevices: Get all factory devices.
-•	GET /api/factorydevices/{id}: Get a specific factory device by its ID.
+-	GET /api/factorydevices: Get all factory devices.
+-	GET /api/factorydevices/{id}: Get a specific factory device by its ID.
 
 #### Maintenance Tasks
-•	GET /api/maintenancetasks: Get all maintenance tasks.
-•	GET /api/maintenancetasks/{id}: Get a specific maintenance task by its ID.
-•	POST /api/maintenancetasks: Create a new maintenance task.
-•	GET /api/maintenancetasks/bydevice/{factoryDeviceId}: Get all maintenance tasks for a specific factory device.
-•	PUT /api/maintenancetasks/{id}: Update a specific maintenance task. Cannot create new items with this endpoint. Use POST instead.
-•	DELETE /api/maintenancetasks/{id}: Delete a specific maintenance task.
+-	GET /api/maintenancetasks: Get all maintenance tasks.
+-	GET /api/maintenancetasks/{id}: Get a specific maintenance task by its ID.
+-	POST /api/maintenancetasks: Create a new maintenance task.
+-	GET /api/maintenancetasks/bydevice/{factoryDeviceId}: Get all maintenance tasks for a specific factory device.
+-	PUT /api/maintenancetasks/{id}: Update a specific maintenance task. Cannot create new items with this endpoint. Use POST instead.
+-	DELETE /api/maintenancetasks/{id}: Delete a specific maintenance task.
+
+![image](https://github.com/JaakkoHirvela/ServiceManual/assets/97606286/2dc01ad3-fa88-487e-b989-56943fdfa976)
 
 ### Example Requests
 
@@ -72,11 +74,11 @@ Content-Type: application/json
 See more examples in \EtteplanMORE.ServiceManual.Web\TestRequests.http.
 
 ### Database
-The application uses a local SQL Server database. The connection string is defined in Program.cs. The database is reset and seeded with some data every time the application starts.
+The application uses a local SQL Server database. The connection string is defined in Program.cs. The database is seeded with some data when starting the app the first time.
 
 ### Swagger UI
 If you run the application in development mode, you can access the Swagger UI at /swagger to interact with the API endpoints.
 
 ### Dependencies
-•	Entity Framework Core: Used for data access.
-•	Swashbuckle: Used to generate Swagger UI and OpenAPI documentation.
+â€¢	Entity Framework Core: Used for data access.
+â€¢	Swashbuckle: Used to generate Swagger UI and OpenAPI documentation.
