@@ -3,10 +3,11 @@ using EtteplanMORE.ServiceManual.ApplicationCore.Services;
 using EtteplanMORE.ServiceManual.ApplicationCore.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Http;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;Database=ServiceManualDb;Integrated Security=True";
+const string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;Database=ServiceManualDb;Integrated Security=True";
 
 builder.Services.AddDbContext<ServiceManualDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -24,7 +25,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add services to the container.
+// Add services.
 builder.Services.AddScoped<IFactoryDeviceService, FactoryDeviceService>();
 builder.Services.AddScoped<IMaintenanceTaskService, MaintenanceTaskService>();
 

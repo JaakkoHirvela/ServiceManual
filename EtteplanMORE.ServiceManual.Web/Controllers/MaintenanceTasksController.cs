@@ -19,6 +19,7 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
         ///    HTTP GET: api/maintenancetasks/
         /// </summary>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IEnumerable<MaintenanceTaskDto>> GetAll()
         {
             return (await _maintenanceTaskService.GetAll())
@@ -39,6 +40,8 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
         ///    HTTP GET: api/maintenancetasks/id
         /// </summary>
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<MaintenanceTaskDto>> Get(int id)
         {
             var task = await _maintenanceTaskService.Get(id);
@@ -62,6 +65,8 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
         ///     HTTP POST: api/maintenancetasks/
         /// </summary>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<MaintenanceTaskDto>> Create(MaintenanceTask newMaintenanceTask)
         {
             var maintenanceTask = new MaintenanceTask
@@ -82,6 +87,8 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
         ///     HTTP GET: api/maintenancetasks/bydevice/factoryDeviceId
         /// </summary>
         [HttpGet("bydevice/{factoryDeviceId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IEnumerable<MaintenanceTaskDto>> GetByDevice(int factoryDeviceId)
         {
             return (await _maintenanceTaskService.GetByDevice(factoryDeviceId))
@@ -101,6 +108,9 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
         ///     HTTP PUT: api/maintenancetasks/id
         /// </summary>
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Update(int id, MaintenanceTask updatedMaintenanceTask)
         {
             // Check that the id in the URL matches the id in the body.
@@ -130,6 +140,8 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
         ///     HTTP DELETE: api/maintenancetasks/id
         /// </summary>
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
             // Check if the task exists.

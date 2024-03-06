@@ -17,7 +17,7 @@ Accept: application/json
 
 ###
 
-GET {{ServiceManual_HostAddress}}/api/MaintenanceTasks/1
+GET {{ServiceManual_HostAddress}}/api/MaintenanceTasks/11
 Accept: application/json
 
 ###
@@ -43,14 +43,13 @@ Accept: application/json
 ###
 POST {{ServiceManual_HostAddress}}/api/MaintenanceTasks/
 Content-Type: application/json
-Accept: application/json
 
 {
     "factoryDeviceId": 1,
-    "severity": 0,
+    "severity": "critical",
     "description": "This is test task number 4",
-    "registrationTime": "2022-01-01T00:00:00",
-    "status": "Open"
+    "registrationTime": "2024-03-06",
+    "status": "open"
 }
 
 ###
