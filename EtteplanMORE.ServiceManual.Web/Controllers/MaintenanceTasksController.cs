@@ -122,7 +122,7 @@ namespace EtteplanMORE.ServiceManual.Web.Controllers
             var existingTask = await _maintenanceTaskService.Get(id);
 
             if (existingTask == null)
-                return NotFound("The task didn't exist in the database. Use a POST request instead.");
+                return NotFound("The task didn't exist in the database. Use a POST request instead to create new tasks.");
 
             // Update the existing task's values.
             existingTask.FactoryDeviceId = updatedMaintenanceTask.FactoryDeviceId;
